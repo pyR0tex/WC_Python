@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asgiref==3.3.1
 astroid==2.5.6
 beautifulsoup4==4.9.3
@@ -65,3 +66,6 @@ wrapt==1.12.1
 yatl==20210326.1
 zope.event==4.5.0
 zope.interface==5.4.0
+=======
+
+>>>>>>> 9f3ec6850628a957a76118dd5f634cc8831d244e
