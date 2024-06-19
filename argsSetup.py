@@ -30,8 +30,6 @@ def argsSetup():
                         help="The number of bytes in each input file is written to standard output"
                         )
     
-<<<<<<< HEAD
-=======
     '''
     Flag: -m
     Def: Number of characters in each input file is written to the standard output
@@ -47,6 +45,5 @@ def argsSetup():
     Def: Number of words in each input file is written to the standard output
     '''
 
->>>>>>> 9f3ec6850628a957a76118dd5f634cc8831d244e
     args = parser.parse_args()
     return args
