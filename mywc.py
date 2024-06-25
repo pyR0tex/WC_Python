@@ -21,26 +21,43 @@ def main(args):
             print(f"      {Byte_Count(args.c.name)} {path.basename(args.c.name)}")
         else:
             print(f"      {Byte_Count(args.c.name)}")
+    # if -m flag
     elif args.m:
         if args.m.name != "<stdin>":
             print(f"      {Char_Count(args.m.name)} {path.basename(args.m.name)}")
         else:
             print(f"      {Char_Count(args.m.name)}")
+    # if -l flag
     elif args.l:
         if args.l.name != "<stdin>":
             print(f"      {Line_Count(args.l.name)} {path.basename(args.l.name)}")
         else:
             print(f"      {Line_Count(args.l.name)}")
     elif args.w:
+    # if -w flag
         if args.w.name != "<stdin>":
             print(f"      {Word_Count(args.w.name)} {path.basename(args.w.name)}")
         else:
             print(f"      {Word_Count(args.w.name)}")
     else:
-        if args.input_file:
-            print(f"      {args.input_file}")
+        # if no flags except input file
+        if args.input_file is not None:
+            print(f"      {Line_Count(args.input_file)}       {Word_Count(args.input_file)}       {Byte_Count(args.input_file)}     {path.basename(args.input_file)}")
+        # if no flags or input file given
         else:
             print(f"      input -> stdin: feature = work in progress")
+            stdinContent = sys.stdin.read()
+            dummyFile = "dummyFile.txt"
+
+            # write standard input into dummy file
+            with open(dummyFile, "w") as DF:
+                DF.write(stdinContent)
+            print(f"      {Line_Count(dummyFile)}       {Word_Count(dummyFile)}       {Byte_Count(dummyFile)}     {path.basename(dummyFile)}")
+
+            # remove dummy file
+            if path.exists(dummyFile):
+                remove(dummyFile)
+
 
 def Byte_Count(fileName):
     ''' Returns the number of bytes in each Input File
