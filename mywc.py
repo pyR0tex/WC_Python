@@ -45,7 +45,6 @@ def main(args):
             print(f"      {Line_Count(args.input_file)}       {Word_Count(args.input_file)}       {Byte_Count(args.input_file)}     {path.basename(args.input_file)}")
         # if no flags or input file given
         else:
-            print(f"      input -> stdin: feature = work in progress")
             stdinContent = sys.stdin.read()
             dummyFile = "dummyFile.txt"
 
